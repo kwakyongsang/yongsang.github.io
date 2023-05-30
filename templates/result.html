@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>결과 페이지</title>
+</head>
+<body>
+    <h1>이름 번역 결과</h1>
+    <p>입력한 한국어 이름: {{ input_name }}</p>
+    <p>영어 이름: {{ english_name }}</p>
+
+    <h2>유사도 높은 이름 추천 (상위 5개)</h2>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>유사도</th>
+        </tr>
+        {% for score in similarity_scores %}
+        <tr>
+            <td>{{ score[0] }}</td>
+            <td>{{ score[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
